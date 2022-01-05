@@ -6,19 +6,19 @@ function [h, display_array] = displayData(X, example_width)
 
 % Set example_width automatically if not passed in
 if ~exist('example_width', 'var') || isempty(example_width) 
-	example_width = round(sqrt(size(X, 2)));
+	example_width = round(sqrt(size(X, 2)));  % 传入的X是400列，得到的example就是20列
 end
 
 % Gray Image
 colormap(gray);
 
 % Compute rows, cols
-[m n] = size(X);
-example_height = (n / example_width);
+[m n] = size(X);  % [100 400]
+example_height = (n / example_width);  % 20
 
 % Compute number of items to display
-display_rows = floor(sqrt(m));  % 70
-display_cols = ceil(m / display_rows);  % 72
+display_rows = floor(sqrt(m));  % 10
+display_cols = ceil(m / display_rows);  % 10
 
 % Between images padding
 pad = 1;
